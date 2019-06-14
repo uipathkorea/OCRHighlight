@@ -1,0 +1,218 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1099,2760" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath</x:String>
+      <x:String>System.Windows.Media.Imaging</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Interop</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1059,2680" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Name="Results" />
+      <Variable x:TypeArguments="x:String" Name="Text" />
+      <Variable x:TypeArguments="ui:Image" Name="Image" />
+      <Variable x:TypeArguments="sd:Bitmap" Name="BitmapImage" />
+      <Variable x:TypeArguments="sd:Color" Name="TargetColor" />
+      <Variable x:TypeArguments="x:Int32" Default="2" Name="LineGap" />
+      <Variable x:TypeArguments="x:String" Default="외교부" Name="Keyword" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LoadImage DisplayName="Load Image" FileName="News1.png" sap:VirtualizedContainerService.HintSize="1037,59" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[Image]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1037,224" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="222,146" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GoogleOCR FilterRegion="{x:Null}" AllowedCharacters="" DeniedCharacters="" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" Invert="False" Language="kor" Profile="Screen" Result="[Results]" Scale="2" Text="[Text]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:MicrosoftOCR FilterRegion="{x:Null}" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="1037,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Language="Korean" Profile="Screen" Result="[Results]" Scale="1" Text="[Text]" />
+    <Assign sap:VirtualizedContainerService.HintSize="1037,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:Bitmap">[BitmapImage]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:Bitmap">[CType(Image, System.Drawing.Bitmap)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1037,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="검색할 키워드를 입력하세요. 단어단위 임 " Title="OCR에서 선택된 키워드 표시하기 ">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[Keyword]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:ForEach x:TypeArguments="scg:KeyValuePair(sd:Rectangle, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1037,1705" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Results]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="scg:KeyValuePair(sd:Rectangle, x:String)">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="scg:KeyValuePair(sd:Rectangle, x:String)" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1021,1571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[item.Value.Contains(Keyword)]" sap:VirtualizedContainerService.HintSize="999,1447" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="874,1299" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:Rectangle" Name="Rect" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="852,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[item.Value + &quot;..... &quot; + item.Key.ToString]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="852,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:Rectangle">[Rect]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:Rectangle">[New Rectangle( item.Key.X-4, item.Key.Y-4, Item.Key.Width+8, item.Key.Height+8)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="852,944" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Enumerable.Range(Rect.X, Rect.Width)]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Int32">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="dx" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="836,810" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[Math.Abs( Rect.X - dx) &lt;= LineGap Or Math.Abs(Rect.X +Rect.Width - dx ) &lt;= LineGap]" sap:VirtualizedContainerService.HintSize="814,686" sap2010:WorkflowViewState.IdRef="If_5">
+                            <If.Then>
+                              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="287,390" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.Range(Rect.Y, Rect.Height)]">
+                                <ui:ForEach.Body>
+                                  <ActivityAction x:TypeArguments="x:Int32">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Int32" Name="dy" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="240,256" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="218,132" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetPixel">
+                                        <InvokeMethod.TargetObject>
+                                          <InArgument x:TypeArguments="sd:Bitmap">[BitmapImage]</InArgument>
+                                        </InvokeMethod.TargetObject>
+                                        <InArgument x:TypeArguments="x:Int32">[dx]</InArgument>
+                                        <InArgument x:TypeArguments="x:Int32">[dy]</InArgument>
+                                        <InArgument x:TypeArguments="sd:Color">[System.Drawing.Color.FromArgb(100,255,0,0)]</InArgument>
+                                      </InvokeMethod>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEach.Body>
+                              </ui:ForEach>
+                            </If.Then>
+                            <If.Else>
+                              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="502,538" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(Rect.Y, Rect.Height)]">
+                                <ui:ForEach.Body>
+                                  <ActivityAction x:TypeArguments="x:Int32">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Int32" Name="dy" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,404" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[Math.Abs( dy - Rect.Y) &lt;= LineGap Or Math.Abs(  Rect. Y + Rect.Height - dy) &lt;= LineGap]" sap:VirtualizedContainerService.HintSize="464,280" sap2010:WorkflowViewState.IdRef="If_4">
+                                        <If.Then>
+                                          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="218,132" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="SetPixel">
+                                            <InvokeMethod.TargetObject>
+                                              <InArgument x:TypeArguments="sd:Bitmap">[BitmapImage]</InArgument>
+                                            </InvokeMethod.TargetObject>
+                                            <InArgument x:TypeArguments="x:Int32">[dx]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[dy]</InArgument>
+                                            <InArgument x:TypeArguments="sd:Color">[System.Drawing.Color.FromArgb(100,255,0,0)]</InArgument>
+                                          </InvokeMethod>
+                                        </If.Then>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEach.Body>
+                              </ui:ForEach>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                </Sequence>
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="1037,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="News1_rect.png" />
+    <ui:SaveImage DisplayName="Save Image" FileName="News1_rect.png" sap:VirtualizedContainerService.HintSize="1037,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[CType( BitmapImage, UiPath.Core.Image)]" />
+  </Sequence>
+</Activity>
